@@ -35,7 +35,7 @@
 
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '355553731518725',
+            appId      : '355553731518725',  // Yeebay's Learn-Web Login test app
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
@@ -43,9 +43,9 @@
         });
 
         // Now that we've initialized the JavaScript SDK, we call
-        // FB.getLoginStatus().  This function gets the state of the
+        // FB.getLoginStatus(). This function gets the state of the
         // person visiting this page and can return one of three states to
-        // the callback you provide.  They can be:
+        // the callback you provide. They can be:
         //
         // 1. Logged into your app ('connected')
         // 2. Logged into Facebook, but not your app ('not_authorized')
@@ -72,11 +72,11 @@
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
+        console.log('Welcome! Fetching your information.... ');
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
+                'You are now logged in. Thank you for logging in, ' + response.name + '!';
         });
     }
 </script>
@@ -89,7 +89,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-
+<p>old button</p>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
